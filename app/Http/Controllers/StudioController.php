@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 namespace App\Http\Controllers;
 
@@ -14,7 +14,10 @@ class StudioController extends Controller
      */
     public function index()
     {
-        //
+        $studios = Studio::latest()->paginate(10);
+
+        return view('studios.index', compact('studios'))
+            ->with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -24,7 +27,7 @@ class StudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('studios.create');
     }
 
     /**
@@ -35,7 +38,19 @@ class StudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_studio'    => 'required',
+            'tipe_studio'    => 'required',
+            'jumlah_studio'  => 'required',
+            'jumlah_kursi'   => 'required',
+            'kode_kursi'     => 'required',
+            'keterangan'     => 'required',
+        ]);
+
+        Studio::create($request->all());
+
+        return redirect()->route('studios.index')
+            ->with('success', 'Studi berhasil ditambahkan!');
     }
 
     /**
@@ -46,7 +61,7 @@ class StudioController extends Controller
      */
     public function show(Studio $studio)
     {
-        //
+        return view('studio.show', compact('studio'));
     }
 
     /**
@@ -57,7 +72,7 @@ class StudioController extends Controller
      */
     public function edit(Studio $studio)
     {
-        //
+        return view('studios.edit', compact('studio'));
     }
 
     /**
@@ -69,7 +84,19 @@ class StudioController extends Controller
      */
     public function update(Request $request, Studio $studio)
     {
-        //
+        $request->validate([
+            'nama_studio'    => 'required',
+            'tipe_studio'    => 'required',
+            'jumlah_studio'  => 'required',
+            'jumlah_kursi'   => 'required',
+            'kode_kursi'     => 'required',
+            'keterangan'     => 'required',
+        ]);
+
+        $studio->update($request->all());
+
+        return redirect()->route('studios.index')
+            ->with('success', 'Studi berhasil diubah!');
     }
 
     /**
@@ -80,6 +107,9 @@ class StudioController extends Controller
      */
     public function destroy(Studio $studio)
     {
-        //
+        $studio->delete();
+
+        return redirect()->route('studios.index')
+            ->with('success', 'Studio berhasil dihapus!');
     }
 }

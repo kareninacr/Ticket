@@ -14,8 +14,10 @@ class FilmController extends Controller
      */
     public function index()
     {
-        $films = Film::latest();
-        return view('film.index', compact('films'));
+        $films = Film::latest()->paginate(10);
+
+        return view('films.index', compact('films'))
+             ->with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -38,15 +40,20 @@ class FilmController extends Controller
     {
         $request->validate([
             'judul'     => 'required', 
-            'cover'     => 'required',
+            'cover'     => 'required|image|mimes:jpeg, png, jpg|max:2048',
             'durasi'    => 'required',
             'rating'    => 'required',
-            'sinopsi'   => 'required',
+            'sinopsis'  => 'required',
             'trailer'   => 'required', 
         ]);
 
-        Film->create($request->all());
-        return redirect()->route('films.index')->with('success', "Film berhasil ditambahkan!");    
+        $coverName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $coverName);
+
+        Film::create($request->all());
+
+        return redirect()->route('films.index')
+            ->with('success', "Film berhasil ditambahkan!");    
 
     }
 
@@ -86,12 +93,13 @@ class FilmController extends Controller
             'cover'     => 'required',
             'durasi'    => 'required',
             'rating'    => 'required',
-            'sinopsi'   => 'required',
+            'sinopsis'  => 'required',
             'trailer'   => 'required', 
         ]);
 
-        Film->update($request->all());
-        return redirect()->route('films.index')->with('success', "Film berhasil diubah!"); 
+        $film->update($request->all());
+        return redirect()->route('films.index')
+            ->with('success', "Film berhasil diubah!"); 
     }
 
     /**
@@ -102,7 +110,8 @@ class FilmController extends Controller
      */
     public function destroy(Film $film)
     {
-        Film->delete();
-        return redirect()->route('films.index')->with('success', "Film berhasil dihapus!"); 
+        $film->delete();
+        return redirect()->route('films.index')
+            ->with('success', "Film berhasil dihapus!"); 
     }
 }

@@ -15,6 +15,6 @@ class Cinema extends Model
     }
 
     protected $fillable = [
-        'waktu_booking', 'films_id', 'studios_id', 'jadwal_tayang', 'harga_tiket',
+        'nama_bioskop', 'alamat', 'tlp', 'films_id', 'jadwal_tayang', 'status_film', 'studios_id', 'harga_tiket',
     ];
 }

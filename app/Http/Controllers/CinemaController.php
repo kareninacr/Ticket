@@ -14,7 +14,10 @@ class CinemaController extends Controller
      */
     public function index()
     {
-        //
+        $cinemas = Cinema::latest()->paginate(10);
+
+        return view('cinemas.index', compact('cinemas'))
+            -with('i', (request()->input('page', 1) -1) * 10);
     }
 
     /**
@@ -24,7 +27,7 @@ class CinemaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cinemas.create');
     }
 
     /**
@@ -35,7 +38,21 @@ class CinemaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_bioskop'   => 'required',
+            'alamat'         => 'required',
+            'tlp'            => 'required',
+            'films_id'       => 'required',
+            'jadwal_tayang'  => 'required',
+            'status_film'    => 'required',
+            'studios_id'     => 'required',
+            'harga_tiket'    => 'required',
+        ]);
+
+        Cinema::create($request()->all());
+
+        return redirect()->route('cinemas.index')
+            ->with('success', 'Bioskop berhasil ditambahkan!');
     }
 
     /**
@@ -46,7 +63,7 @@ class CinemaController extends Controller
      */
     public function show(Cinema $cinema)
     {
-        //
+        return view('cinemas.show', compact('cinema'));
     }
 
     /**
@@ -57,7 +74,7 @@ class CinemaController extends Controller
      */
     public function edit(Cinema $cinema)
     {
-        //
+        return view('cinemas.edit', compact('cinema'));
     }
 
     /**
@@ -69,7 +86,21 @@ class CinemaController extends Controller
      */
     public function update(Request $request, Cinema $cinema)
     {
-        //
+        $request->validate([
+            'nama_bioskop'   => 'required',
+            'alamat'         => 'required',
+            'tlp'            => 'required',
+            'films_id'       => 'required',
+            'jadwal_tayang'  => 'required',
+            'status_film'    => 'required',
+            'studios_id'     => 'required',
+            'harga_tiket'    => 'required',
+        ]);
+
+        $cinema->update($request()->all());
+
+        return redirect()->route('cinemas.index')
+            ->with('success', 'Bioskop berhasil diubah!');
     }
 
     /**
@@ -80,6 +111,9 @@ class CinemaController extends Controller
      */
     public function destroy(Cinema $cinema)
     {
-        //
+        $cinema->delete();
+
+        return redirect()->route('cinemas.index')
+            ->with('success', 'Bioskop berhasil dihapus!');
     }
 }

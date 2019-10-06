@@ -15,7 +15,9 @@ class CreateCinemasTable extends Migration
     {
         Schema::create('cinemas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->datetime('waktu_booking');
+            $table->string('nama_bioskop');
+            $table->string('alamat');
+            $table->string('tlp');
             $table->bigInteger('films_id')->unsigned()->index();
             $table->bigInteger('studios_id')->unsigned()->index();
             $table->datetime('jadwal_tayang');
