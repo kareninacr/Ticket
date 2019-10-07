@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Ubahh Studio </h2>
+                <h2> Ubah Studio </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('studios.index') }}">Kembali</a>

@@ -15,8 +15,8 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tunai');
-            $table->enum('non-tunai', ['Via ATM', 'Gopay', 'OVO', 'Dana']);
+            $table->integer('tunai');
+            $table->enum('non_tunai', ['Via ATM', 'Gopay', 'OVO', 'Dana']);
             $table->timestamps();
         });
     }
