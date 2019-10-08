@@ -16,13 +16,14 @@ class FilmController extends Controller
     {
         $films = Db::table('film')->paginate(10);
 
-        return view('index', ['film' => $film]);
-    } 
+        return view('index', ['film' => $films]);
+    }
 
-    public function cari(Request $request) {
+    public function cari(Request $request)
+    {
         $cari = $request->cari;
 
-        $film = DB::table('film')->where('judul', 'like', "%".$cari."%")->paginate(10);
+        $film = DB::table('film')->where('judul', 'like', "%" . $cari . "%")->paginate(10);
         return view('index', ['film' => $film]);
     }
 
@@ -45,22 +46,21 @@ class FilmController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judul'     => 'required', 
+            'judul'     => 'required',
             'cover'     => 'required|image|mimes:jpeg, png, jpg|max:2048',
             'durasi'    => 'required',
             'rating'    => 'required',
             'sinopsis'  => 'required',
-            'trailer'   => 'required', 
+            'trailer'   => 'required',
         ]);
 
-        $coverName = time().'.'.$request->image->extension();
+        $coverName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $coverName);
 
         Film::create($request->all());
 
         return redirect()->route('films.index')
-            ->with('success', "Film berhasil ditambahkan!");    
-
+            ->with('success', "Film berhasil ditambahkan!");
     }
 
     /**
@@ -95,17 +95,17 @@ class FilmController extends Controller
     public function update(Request $request, Film $film)
     {
         $request->validate([
-            'judul'     => 'required', 
+            'judul'     => 'required',
             'cover'     => 'required',
             'durasi'    => 'required',
             'rating'    => 'required',
             'sinopsis'  => 'required',
-            'trailer'   => 'required', 
+            'trailer'   => 'required',
         ]);
 
         $film->update($request->all());
         return redirect()->route('films.index')
-            ->with('success', "Film berhasil diubah!"); 
+            ->with('success', "Film berhasil diubah!");
     }
 
     /**
@@ -118,6 +118,6 @@ class FilmController extends Controller
     {
         $film->delete();
         return redirect()->route('films.index')
-            ->with('success', "Film berhasil dihapus!"); 
+            ->with('success', "Film berhasil dihapus!");
     }
 }
