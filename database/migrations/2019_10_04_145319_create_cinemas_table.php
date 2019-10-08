@@ -19,9 +19,9 @@ class CreateCinemasTable extends Migration
             $table->string('alamat');
             $table->string('tlp');
             $table->bigInteger('films_id')->unsigned()->index();
-            $table->bigInteger('studios_id')->unsigned()->index();
             $table->datetime('jadwal_tayang');
             $table->integer('harga_tiket');
+            $table->bigInteger('studios_id')->unsigned()->index();
             $table->timestamps();
 
             $table->foreign('films_id')->references('id')->on('films');

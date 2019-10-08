@@ -14,10 +14,16 @@ class FilmController extends Controller
      */
     public function index()
     {
-        $films = Film::latest()->paginate(10);
+        $films = Db::table('film')->paginate(10);
 
-        return view('films.index', compact('films'))
-             ->with('i', (request()->input('page', 1) -1) * 10);
+        return view('index', ['film' => $film]);
+    } 
+
+    public function cari(Request $request) {
+        $cari = $request->cari;
+
+        $film = DB::table('film')->where('judul', 'like', "%".$cari."%")->paginate(10);
+        return view('index', ['film' => $film]);
     }
 
     /**
