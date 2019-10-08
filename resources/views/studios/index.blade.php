@@ -50,5 +50,5 @@
         @endforeach
     </table>
 
-    {!! $studios->links() !!}
+    {!! $studio->links() !!}
 @endsection

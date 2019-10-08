@@ -42,5 +42,5 @@
         @endforeach
     </table>
 
-    {!! $payments->links() !!}
+    {!! $payment->links() !!}
 @endsection

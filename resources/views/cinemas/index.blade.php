@@ -54,5 +54,5 @@
         @endforeach
     </table>
 
-    {!! $cinemas->links() !!}
+    {!! $cinema->links() !!}
 @endsection

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cinema extends Model
 {
+    protected $table = 'cinemas';
+
     public function film() {
         return $this->hasMany('App/Film');
     }

@@ -16,7 +16,13 @@
         <div class="alert alert-success">
             <p> {{ $message }} </p>
         </div>
-    @endif    
+    @endif   
+
+    <p> Cari </p>
+    <form action="/film/cari" method="GET">
+        <input type="text" name="cari" placeholder="Cari Film" value="{{ old('cari') }}">
+        <input type="submit" value="CARI">
+    </form> 
 
     <table class="table table-bordered">
         <tr>
@@ -50,5 +56,5 @@
         @endforeach
     </table>
 
-    {!! $films->links() !!}
+    {!! $film->links() !!}
 @endsection

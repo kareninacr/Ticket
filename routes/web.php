@@ -20,5 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('films', 'FilmController');
+Route::get('/films/cari', 'FilmController@cari');
 
-Route::resource('Studio', 'StudioController');
+Route::resource('studios', 'StudioController');
+
+Route::resource('cinemas', 'CinemaController');
+
+Route::resource('payments', 'PaymentController');
+
+
