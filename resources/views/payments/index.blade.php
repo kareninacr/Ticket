@@ -7,7 +7,7 @@
                 <h2> Tick@ - Pesan Tiket Bioskop Online </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('payments.create') }}"> Tambah Film Baru </a>
+                <a class="btn btn-success" href="{{ route('payments.create') }}"> Tambah Pembayaran </a>
             </div>
         </div>
     </div>
@@ -21,26 +21,25 @@
     <table class="table table-bordered">
         <tr>
             <th> No </th>
-            <th> Tunai </th>
-            <th> Non Tunai </th>
+            <th> Total Bayar </th>
+            <th> Metode Pembayaran </th>
             <th width="280px"> Aksi </th>
         </tr>
         @foreach ($payments as $payment)
         <tr>
-            <td> {{ ++$1 }} </td>
-            <td> {{ $film->tunai }} </td>
-            <td> {{ $film->non_tunai }} </td>
-            <td> <form action="{{ route('payments.destroy', $payment->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('payments.show', $payment->id) }}"> Lihat </a>
-                    <a class="btn btn-primary" href="{{ route('payments.edit', $payment->id) }}"> Ubah </a>
+            <td> {{ $loop->iteration }} </td>
+            <td> {{ $payment->total_bayar }} </td>
+            <td> {{ $payment->metode }} </td>
+            <td> 
+                <a class="btn btn-info" href="{{ route('payments.show', $payment->id) }}"> Lihat </a>
+                <a class="btn btn-primary" href="{{ route('payments.edit', $payment->id) }}"> Ubah </a>
                         @csrf 
                         @method('DELETE')
-                    <button type="submit" class="btn btn-danger"> Hapus </button>
-                 </form>
+                <a class="btn btn-danger" href="{{ route('payments.destroy', $payment->id) }}"> Hapus </a>
             </td>
         </tr>
         @endforeach
     </table>
 
-    {!! $payments->links() !!}
+    {{-- {!! $payments->links() !!} --}}
 @endsection

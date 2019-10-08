@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('films', 'FilmController');
-
+Route::get('/payment', 'PaymentController@index');
+Route::resource('payments', 'PaymentController');
 Route::resource('Studio', 'StudioController');

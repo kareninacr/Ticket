@@ -14,7 +14,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $payments = Payment::all();
+        return view('payments.index', ['payments' => $payments]);
     }
 
     /**
@@ -24,7 +25,7 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        //
+        return view('payments.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'total_bayar' => 'required',
+            'metode' => 'required'
+        ]);
+
+        Payment::create([
+            'total_bayar' => $request->total_bayar,
+            'metode' => $request->metode
+        ]);
+
+        return redirect('/payment');
     }
 
     /**
@@ -55,9 +66,10 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit($id)
     {
-        //
+        $payments = Payment::find($id);
+        return view('payments.edit', ['payments' => $payments]);
     }
 
     /**
@@ -67,9 +79,18 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update($id, Request $request)
     {
-        //
+        $this->validate($request, [
+            'total_bayar' => 'required',
+            'metode' => 'required'
+        ]);
+
+        $payments = Payment::find($id);
+        $payments->total_bayar = $request->total_bayar;
+        $payments->metode = $request->metode;
+        $payments->save();
+        return redirect('/payment');
     }
 
     /**
@@ -80,6 +101,7 @@ class PaymentController extends Controller
      */
     public function destroy(Payment $payment)
     {
-        //
+        $payment->delete();
+        return redirect('/payment');
     }
 }

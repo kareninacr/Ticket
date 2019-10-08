@@ -31,7 +31,7 @@
         </tr>
         @foreach ($films as $film)
         <tr>
-            <td> {{ ++$1 }} </td>
+            <td> {{ ++$i }} </td>
             <td> {{ $film->judul }} </td>
             <td> {{ $film->cover }} </td>
             <td> {{ $film->durasi }} </td>

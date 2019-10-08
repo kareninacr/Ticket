@@ -16,33 +16,34 @@
         <div class="alert alert-danger">
             <strong> Ups!</strong> Kayaknya ada yang salah deh ! <br><br>
             <ul>
-                @foreach (errors->all() as $error)
+                @foreach ($errors->all() as $error)
                     <li> {{ $error }} </li>
                 @endforeach
             <ul>
         </div>
     @endif
 
-    <form action="{{ route('payments.edit', $payment->id) }}" method="POST">
+    <form action="{{ route('payments.update', $payments->id) }}" method="POST">
         @csrf 
         @method('PUT')
     
         <div class="row">
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
-                    <strong> Tunai </strong>
-                    <input type="text" name="tunai" value="{{ $payment->tunai }}" class="form-control" placeholder="00.000">
+                    <strong> Total Bayar </strong>
+                    <input type="text" name="total_bayar" value="{{ $payments->total_bayar }}" class="form-control" placeholder="Rp.">
                 </div>
             </div>
 
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
-                    <strong> Non Tunai </strong>
-                    <select name="non_tunai" class="form-control"> Pembayaran Non Tunai 
-                        <option value="{{ $payment->non_tunai }}"> Via ATM </option>
-                        <option value="{{ $payment->non_tunai }}"> Gopay </option>
-                        <option value="{{ $payment->non_tunai }}"> OVO </option>
-                        <option value="{{ $payment->non_tunai }}"> Dana </option>
+                    <strong> Metode Pembayaran </strong>
+                    <select name="metode" class="form-control">
+                            <option value="Tunai" {{ $payments->metode == "Tunai" ? "selected" : "" }}> Tunai </option>
+                            <option value="Via ATM" {{ $payments->metode == "Via ATM" ? "selected" : "" }}> Via ATM </option>
+                            <option value="Gopay" {{ $payments->metode == "Gopay" ? "selected" : "" }}> Gopay </option>  
+                            <option value="OVO" {{ $payments->metode == "OVO" ? "selected" : "" }}> OVO </option>
+                            <option value="Dana" {{ $payments->metode == "Dana" ? "selected" : "" }}> Dana </option>
                     </select>
                 </div>
             </div>
