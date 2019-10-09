@@ -279,7 +279,7 @@
           <hr>
         </div>
         <div class="selengkapnya container">
-          <a href=""><pre>Selengkapnya   ></pre></a>
+          <a href="{{url('/films')}}"><pre>Selengkapnya   ></pre></a>
         </div>
 
         <!-- card -->

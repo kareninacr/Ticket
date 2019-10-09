@@ -12,11 +12,17 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function index()
+    // {
+    //     $films = Film::all();
+    //     return view('films.index', ['films' => $films]);
+    // }
     public function index()
     {
         $films = Film::all();
-        return view('films.index', ['films' => $films]);
+        return view('films.sedang_tayang', ['films' => $films]);
     }
+    
 
     // public function cari(Request $request)
     // {
@@ -119,5 +125,10 @@ class FilmController extends Controller
     {
         $film->delete();
         return redirect('/films');
+    }
+    public function indexs()
+    {
+        $films = Film::all();
+        return view('films.v_comingsoon', ['films' => $films]);
     }
 }

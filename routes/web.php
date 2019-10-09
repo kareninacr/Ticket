@@ -27,12 +27,14 @@ Route::get('seats', function () {
     return view('studios.show');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('films', 'FilmController');
 
+Route::get('filmss', 'FilmController@indexs');
 Route::get('/payment', 'PaymentController@index');
 
 Route::get('/films/cari', 'FilmController@cari');

@@ -219,17 +219,18 @@
       </div>
 
 
-    <<div class="kartu">
+    <div class="kartu">
         <div class="container">
           <div class="row">
-            <div class="col-sm">
+            @foreach ($films as $film)
+            <div class="col-sm" style="margin-bottom: 50px;">
               <a href="">
         <div class="card cards">
-        <img src="{{ asset('images/AV.jpg') }}" alt="Joker" class="card-img-top">
+        <img src="{{ asset('images/'.$film->cover) }}" alt="Joker" class="card-img-top">
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <h4 class="title">Avenger</h4>
+                    <h4 class="title">{{ $film->judul }}</h4>
                 </div>
 
             </div>
@@ -238,37 +239,12 @@
             </div>
             </a>
             </div>
-            <div class="col-sm">
-        <div class="card cards">
-        <img src="{{ asset('images/tk.jpg') }}" alt="Joker" class="card-img-top">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h4 class="title">Thinker Bell</h4>
-                </div>
-
-            </div>
-
+            @endforeach
+            
             </div>
             </div>
             </div>
-            <div class="col-sm">
-        <div class="card cards">
-        <img src="{{ asset('images/barbies.jpg') }}" alt="Joker" class="card-img-top">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h4 class="title">Barbie</h4>
-                </div>
-
-            </div>
-
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
+            
     <!-- akhir card -->
       </div>
     <!-- akhir coming soon -->
