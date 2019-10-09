@@ -27,9 +27,9 @@
         <div class="container-fluid">
             <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
                 <div class=" collapse navbar-collapse" >
-                    <a class="nav-item nav-link py-0 active" href="{{url('/')}}">Home</a>
-                    <a class="nav-item nav-link py-0" href="#">Premiere</a>
-                    <a class="nav-item nav-link py-0" href="{{url('/cs')}}">Coming Soon</a>
+                    <a class="nav-item nav-link py-0 active" href="{{url('/')}}">BERANDA</a>
+                <a class="nav-item nav-link py-0" href="{{ url('films')}}">SEDANG TAYANG</a>
+                    <a class="nav-item nav-link py-0" href="{{url('/cs')}}">SEGERA</a>
                 </div>
                 <div class="kanan collapse navbar-collapse my-0">
                     <form class="form-inline my-2 my-lg-0 ml-auto">

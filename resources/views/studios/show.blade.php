@@ -197,7 +197,7 @@
         </div>
         <button class="float-right btn btn-primary rounded-pill" style="width: 7em">Bayar</button>
     </div>
-@endsection
+{{-- @endsection --}}
 
 <!-- Kursi Tersedia : {{$studios->total() }} -->
   </head>

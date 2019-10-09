@@ -128,7 +128,7 @@
     <!-- coming soon -->
       <div class="jumbotron">
         <div class="text-center">
-          <h1>COMING SOON</h1>
+          <h1>SEGERA</h1>
           <hr>
         </div>
         <div class="selengkapnya container">
