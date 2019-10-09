@@ -106,6 +106,7 @@ class PaymentController extends Controller
      */
     public function destroy(Payment $payment)
     {
+        // $payments = Payment::find($id);
         $payment->delete();
         return redirect('/payment');
     }

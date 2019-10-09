@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    protected $table = '$bookings';
     public function user() {
         return $this->hasMany('App/User');
     }
