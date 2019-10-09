@@ -246,7 +246,7 @@
             </div>
             
     <!-- akhir card -->
-      </div>
+
     <!-- akhir coming soon -->
 
     <!-- Optional JavaScript -->
