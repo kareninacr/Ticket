@@ -13,7 +13,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Averia+Libre&display=swap" rel="stylesheet">
     <style>
-     .averia{ 
+     .averia{
             font-family: 'Averia Libre';
             font-style: normal;
             font-weight: bold;
@@ -33,9 +33,9 @@
 
       <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
         <div class=" collapse navbar-collapse" >
-            <a class="nav-item nav-link py-0 active" href="index.html">Home</a>
+        <a class="nav-item nav-link py-0 active" href="{{url('/')}}">Home</a>
             <a class="nav-item nav-link py-0" href="#">Premiering</a>
-            <a class="nav-item nav-link py-0" href="#">Coming Soon</a>
+            <a class="nav-item nav-link py-0" href="{{url('cs')}}">Coming Soon</a>
         </div>
         <div class="kanan collapse navbar-collapse my-0">
           <form class="form-inline my-2 my-lg-0 ml-auto">
@@ -65,7 +65,7 @@
     <!-- akhir navbar -->
 
     <!-- pop up Login -->
-      
+
       <div class="modal fade" id="login">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content m-5">
@@ -75,7 +75,7 @@
     <div class="card-body mx-4">
 
       <!--Header-->
-      
+
 
       <!--Body-->
       <div class="row">
@@ -91,14 +91,14 @@
       <div class="md-form">
         <label for="Form-email2">Your email</label>
         <input type="text" id="Form-email1" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
-        
+
       </div>
 
       <div class="md-form pb-3">
         <label for="Form-pass">Your password</label>
         <input type="password" id="Form-pass" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
-        
-      
+
+
       </div>
 
 
@@ -137,7 +137,7 @@
     <!-- akhir pop up login -->
 
     <!-- pop up register -->
-      
+
       <div class="modal fade" id="Register">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content m-5">
@@ -147,7 +147,7 @@
     <div class="card-body mx-4">
 
       <!--Header-->
-      
+
 
       <!--Body-->
       <div class="row">
@@ -163,20 +163,20 @@
       <div class="md-form">
         <label for="Form-email2">Your email</label>
         <input type="text" id="Form-email2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
-        
+
       </div>
 
       <div class="md-form pb-3">
         <label for="Form-pass2">Your password</label>
         <input type="password" id="Form-pass2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
-        
-      
+
+
       </div>
       <div class="md-form pb-3">
         <label for="Form-pass2">No Telephone</label>
         <input class="form-control" type="tel" name="phone" autocomplete="off" placeholder="123412341234"pattern="[0-9]{4}[0-9]{4}[0-9]{4}" required>
-        
-      
+
+
       </div>
 
           <!--Grid row-->
@@ -192,7 +192,7 @@
                 <!--Grid column-->
                 <div class="row">
                 <div class="col-md-12">
-                  <p class="font-small grey-text d-flex justify-content-end">Sudah punya akun? <a href="#" 
+                  <p class="font-small grey-text d-flex justify-content-end">Sudah punya akun? <a href="#"
                       class="blue-text ml-1" id="logs"> Login yuk!!!</a></p>
                 </div>
                 </div>
@@ -223,9 +223,9 @@
                 <div class="col">
                     <h4 class="title">Avenger</h4>
                 </div>
-                
+
             </div>
-                    
+
             </div>
             </div>
             </a>
@@ -238,9 +238,9 @@
                 <div class="col">
                     <h4 class="title">Thinker Bell</h4>
                 </div>
-                
+
             </div>
-                    
+
             </div>
             </div>
             </div>
@@ -252,9 +252,9 @@
                 <div class="col">
                     <h4 class="title">Barbie</h4>
                 </div>
-                
+
             </div>
-                    
+
             </div>
             </div>
             </div>
@@ -264,7 +264,7 @@
     <!-- akhir card -->
       </div>
     <!-- akhir coming soon -->
-      
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

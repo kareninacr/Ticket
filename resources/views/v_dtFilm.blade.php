@@ -17,11 +17,11 @@
     <nav class="navbar navbar-expand-lg fixed-top py-0">
     <div class="container-fluid">
 
-      <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
+      <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" ></img></a>
         <div class=" collapse navbar-collapse" >
-            <a class="nav-item nav-link py-0 active" href="index.html">Home</a>
+            <a class="nav-item nav-link py-0 active" href="{{url('/')}}">Home</a>
             <a class="nav-item nav-link py-0" href="#">Premiering</a>
-            <a class="nav-item nav-link py-0" href="#">Coming Soon</a>
+            <a class="nav-item nav-link py-0" href="{{url('/cs')}}">Coming Soon</a>
         </div>
         <div class="kanan collapse navbar-collapse my-0">
           <form class="form-inline my-2 my-lg-0 ml-auto">
@@ -51,7 +51,7 @@
     <!-- akhir navbar -->
 
     <!-- pop up Login -->
-      
+
       <div class="modal fade" id="login">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content m-5">
@@ -61,7 +61,7 @@
     <div class="card-body mx-4">
 
       <!--Header-->
-      
+
 
       <!--Body-->
       <div class="row">
@@ -77,14 +77,14 @@
       <div class="md-form">
         <label for="Form-email2">Your email</label>
         <input type="text" id="Form-email1" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
-        
+
       </div>
 
       <div class="md-form pb-3">
         <label for="Form-pass">Your password</label>
         <input type="password" id="Form-pass" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
-        
-      
+
+
       </div>
 
 
@@ -123,7 +123,7 @@
     <!-- akhir pop up login -->
 
     <!-- pop up register -->
-      
+
       <div class="modal fade" id="Register">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content m-5">
@@ -133,7 +133,7 @@
     <div class="card-body mx-4">
 
       <!--Header-->
-      
+
 
       <!--Body-->
       <div class="row">
@@ -149,20 +149,20 @@
       <div class="md-form">
         <label for="Form-email2">Your email</label>
         <input type="text" id="Form-email2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
-        
+
       </div>
 
       <div class="md-form pb-3">
         <label for="Form-pass2">Your password</label>
         <input type="password" id="Form-pass2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
-        
-      
+
+
       </div>
       <div class="md-form pb-3">
         <label for="Form-pass2">No Telephone</label>
         <input class="form-control" type="tel" name="phone" autocomplete="off" placeholder="123412341234"pattern="[0-9]{4}[0-9]{4}[0-9]{4}" required>
-        
-      
+
+
       </div>
 
           <!--Grid row-->
@@ -178,7 +178,7 @@
                 <!--Grid column-->
                 <div class="row">
                 <div class="col-md-12">
-                  <p class="font-small grey-text d-flex justify-content-end">Sudah punya akun? <a href="#" 
+                  <p class="font-small grey-text d-flex justify-content-end">Sudah punya akun? <a href="#"
                       class="blue-text ml-1" id="logs"> Login yuk!!!</a></p>
                 </div>
                 </div>
@@ -202,7 +202,7 @@
                     <div class="col">
                         <div class="d-flex justify-content-center">
                         <div class="card" style="width: 17.5rem">
-                            <img class="card-img-top" src="{{ asset('images/jokers.jpg') }}" alt="">
+                            <img class="card-img-top" src="{{ asset('images/joker.png') }}" alt="">
                         </div>
                         </div>
                         <hr style="border: 2px solid black ">
@@ -210,7 +210,7 @@
                             <h6 class="list-group-item border-0">
                                 2D
                                 <div class="list-group list-group-horizontal mt-2 ">
-                                    <a href="#" class="list-group item btn btn-outline-primary ">14:00</a>
+                                    <a href="{{url('/seats')}}" class="list-group item btn btn-outline-primary ">14:00</a>
                                     <a href="#" class="list-group item btn btn-outline-danger mx-2">16:00</a>
                                     <a href="#" class="list-group item btn mx-2">21:00</a>
                                 </div>
@@ -253,7 +253,7 @@
                                                 <h5 class="card-title text-left">Joker</h5>
                                             </div>
                                             <div class="col">
-                                                    <h5 class="card-title text-secondary">Rating 
+                                                    <h5 class="card-title text-secondary">Rating
                                                         <i class="fa fa-star" aria-hidden="true"></i>
                                                         <i class="fa fa-star" aria-hidden="true"></i>
                                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -263,7 +263,7 @@
                                                 </div>
                                                 <div class="col-1">
                                                         <h5 class="card-title text-right float-right text-secondary">13+</h5>
-                                            </div>               
+                                            </div>
                                         </div>
                                         <p class="card-text" style="overflow-y: scroll; height: 7rem;">Cerita Original dari penjahat ikonik (Joker) yang tidak terlihat sebelumnya di layar lebar, Arthur Fleck, seorang pria yang diabaikan oleh masyarakat, dan sebuah cerita yang lebih luas.</p>
                                     </div>
@@ -273,15 +273,15 @@
                     </div>
                 </div>
             </div>
-        
-    
-      
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript"> 
+    <script type="text/javascript">
 
       $(function (){
         $("#regist").click(function (){
