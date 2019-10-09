@@ -1,0 +1,299 @@
+body{
+	padding:  0;
+	margin: 0;
+}
+nav{
+	background-color: #1B9CFC;
+	height: 65px;
+	position: relative;
+	z-index: 1;
+	box-shadow: 2px,2px,2px,2px rgba(255,255,255,.5)
+}
+nav a {
+	color: #fff;
+	font-size: 1.7vw;
+	width: 100%;
+	max-width: 200px;
+	height: 100%;
+	text-align: center;
+	transition: 0.3s;
+}
+.kanan{
+}
+.navbar-collapse .collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+.navbar-brand{
+	width: 120px;
+	height: 50px;
+	margin-top: 0px;
+	display: inline-block !important;
+}
+
+nav a:hover{
+	color: grey;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.1); 
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.3); 
+  border-radius: 40px;
+  height: 100px;
+}::-webkit-scrollbar:horizontal{
+	display: none;
+}
+.jumbotron {
+	background-color: #fff;
+}
+.jumbotron h1{
+	font-size: 1.8vw;
+
+}
+
+ .kanan{
+ 	width: 100px;
+ 	float: right;
+ }
+ .smol{
+ 	font-size: 1.3vw;
+ }
+.search{
+	border-radius: 50px !important;
+	width: 22vw !important;
+	height: 40px;
+	caret-color: #1B9CFC ;
+	caret-size :1vw;
+	margin-right: 0px !important;
+	box-shadow: 0 2px 3px grey;
+}
+.profile{
+	width: 68px;
+}
+#sticky-footer {
+  flex-shrink: none;	
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.kanans{
+	float: right;
+}
+footer p{
+	font-size: 1.5vw;
+	display: inline-block;
+	margin-right: 30px;
+	color: #fff;
+}
+footer a img{
+	margin-right: 20px;
+	display: inline-block;
+
+}
+.carousel{
+	transition: 0.3s;
+}
+.carousel:hover{
+	opacity: .8;
+}
+.carousel-indicators li {
+    width: 1.2vw !important;
+    height: 1.2vw !important; 
+    border-radius: 100% !important;
+    background-color: #1B9CFC !important;
+}
+.ig{
+	transition: .3s;
+	opacity: .9;
+	width: 30px;
+}
+.f{
+	transition: .3s;
+	opacity: .9;
+	width: 40px;
+}
+.g{
+	transition: .3s;
+	opacity: .9;
+	width: 33px;
+	border-radius: 50%;
+}
+.ig:hover{
+	opacity: .4;
+	width: 30px;
+}
+.f:hover{
+	opacity: .4;
+	width: 40px;
+}
+.g:hover{
+	opacity: .4;
+	width: 33px;
+	border-radius: 50%;
+}
+.cards{
+	display: inline-block;
+	width: 21.7vw;
+	height: 40vw;
+	box-shadow: 0px 5px 5px #888888;
+	margin-left: 50px;
+	transition: 0.3s;
+}
+.title{
+	font-size: calc((7vw - 2.5em) / 3);
+	width: 50%;
+	color: #000;
+	text-decoration:none;
+}
+.R{
+	float: right;
+	font-size: 1.2vw;
+
+
+}
+.jumbotron hr{
+	margin-top: 28px;
+	margin-right: 620px; 
+	margin-left: 620px; 
+	border-color: #1B9CFC;
+	background-color: #fff;
+	border-width: 2px;
+}	
+.kartu{
+	margin-top: 80px;
+}
+.cards img{
+	height: 30vw;
+	width: 100%;
+}
+.cards:hover{
+	opacity: .3;
+	width: 21.9vw;
+	box-shadow: 0px 9px 5px #888888;
+}
+.star{
+	color: yellow;
+	float: right;
+	font-size: .8vw;
+}
+
+.selengkapnya pre{
+	transition: 0.3s;
+	float: right;
+	font-size: 1.7vw;
+	color: #888;
+}
+.selengkapnya pre:hover{
+	color: #000;
+	font-size: 1.8vw;
+}
+
+@media (min-width: 1200px) {
+
+	.navbar-brand{
+		width: 159px;
+		height: 55px;
+		margin-top: 0px;
+	}
+	
+}
+.carousel{
+	margin-top: 65px;
+}
+.img{
+	width: 2.5vw;
+	padding-right: 10px;
+	margin-bottom: 5px;
+}
+.dropdown img{
+	cursor: pointer;
+	transition: .3s;
+}
+.dropdown img:hover{
+	opacity: .8;
+}
+
+.dropdown-menu a:hover {
+	background-color: #1B9CFC;
+	 color: #fff;
+	}
+.row .btn{
+		border: 2px solid blue;
+		font-size: .8vw;
+}
+.btn-pink{
+	margin-top: 30px;
+	background-color: #1B9CFC !important;
+	border-radius: 20px !important;
+	color: #fff !important;
+	font-size: 1vw !important;
+	margin-left: 5.5vw;
+	transition: .3s !important;
+}
+.card{
+	box-shadow:  0 5px 5px grey;
+}
+.btn-pink:hover{
+	opacity: .5
+}
+.font-small{
+	margin-top: 20px;
+	text-align: center;
+	margin-left: 2.5vw;
+}
+.pink-text{
+	color: #1B9CFC;
+}
+.modal-bg{
+        background-image: url("{{ asset('images/background-modal.jpeg') }}");
+        width: 100%;
+        background-repeat: no-repeat;
+    }
+    .averia{
+        font-family: 'Averia Libre', cursive;
+    }
+   .jumbotron{
+   	background-color: #fff !important;
+   }
+   .judul{
+   	font-size: 1vw;
+   	color: #1B9CFC;
+   	margin-top: 2vw;
+   }
+   .buttonB {
+	padding-left: 3vw;
+	padding-right: 3vw;
+	height: 5vh;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:  #1B9CFC;
+  border: none;
+  border-radius: 30px;
+
+}
+
+.buttonB:hover {
+	background-color:#2594;
+	color: #1B9CFC;
+}
+.modal-footer{
+	padding-right: 40%;
+	text-align: center;
+}
+
