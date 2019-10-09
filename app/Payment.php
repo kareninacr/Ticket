@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $table = 'payment';
+    //migration namanya 'payments'
+    protected $table = 'payments';
 
     public function booking()
     {
