@@ -14,18 +14,17 @@ class FilmController extends Controller
      */
     public function index()
     {
-        $films = Db::table('film')->paginate(10);
-
-        return view('index', ['film' => $films]);
+        $films = Film::all();
+        return view('films.index', ['films' => $films]);
     }
 
-    public function cari(Request $request)
-    {
-        $cari = $request->cari;
+    // public function cari(Request $request)
+    // {
+    //     $cari = $request->cari;
 
-        $film = DB::table('film')->where('judul', 'like', "%" .$cari. "%")->paginate(10);
-        return view('index', ['film' => $film]);
-    }
+    //     $films = DB::table('film')->where('judul', 'like', "%" .$cari. "%")->paginate(10);
+    //     return view('index', ['film' => $films]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -51,11 +50,13 @@ class FilmController extends Controller
             'durasi'    => 'required',
             'rating'    => 'required',
             'sinopsis'  => 'required',
-            'trailer'   => 'required',
+            'trailer'   => 'required|max:2048',
         ]);
 
-        $coverName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images'), $coverName);
+        $coverName = rand(11111, 99999) . '.' . $request->file('image')->getClientOriginalExtension();
+        $destinationPath = 'events';
+        $fileName = rand(11111, 99999) . '.' . $extension;
+        $upload_success = $image->move($destinationPath, $imageName);
 
         Film::create($request->all());
 
@@ -117,7 +118,6 @@ class FilmController extends Controller
     public function destroy(Film $film)
     {
         $film->delete();
-        return redirect()->route('films.index')
-            ->with('success', "Film berhasil dihapus!");
+        return redirect('/films');
     }
 }

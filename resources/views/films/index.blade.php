@@ -18,11 +18,11 @@
         </div>
     @endif   
 
-    <p> Cari </p>
+    <!-- <p> Cari </p>
     <form action="/film/cari" method="GET">
         <input type="text" name="cari" placeholder="Cari Film" value="{{ old('cari') }}">
         <input type="submit" value="CARI">
-    </form> 
+    </form>  -->
 
     <table class="table table-bordered">
         <tr>
@@ -37,7 +37,7 @@
         </tr>
         @foreach ($films as $film)
         <tr>
-            <td> {{ ++$i }} </td>
+            <td> {{ $loop->iteration }} </td>
             <td> {{ $film->judul }} </td>
             <td> {{ $film->cover }} </td>
             <td> {{ $film->durasi }} </td>
@@ -55,6 +55,4 @@
         </tr>
         @endforeach
     </table>
-
-    {!! $film->links() !!}
 @endsection

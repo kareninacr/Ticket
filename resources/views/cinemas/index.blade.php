@@ -31,20 +31,20 @@
             <th> Harga Tiket </th>
             <th width="280px"> Aksi </th>
         </tr>
-        @foreach ($cinemas as $cinema)
+        @foreach ($cinemas as $data)
         <tr>
-            <td> {{ ++$1 }} </td>
-            <td> {{ $cinema->nama_bioskop }} </td>
-            <td> {{ $cinema->alamat }} </td>
-            <td> {{ $cinema->tlp }} </td>
-            <td> {{ $cinema->films_id }} </td>
-            <td> {{ $cinema->jadwal_tayang }} </td>
-            <td> {{ $cinema->status_film }} </td>
-            <td> {{ $cinema->studios_id }} </td>
-            <td> {{ $cinema->harga_tiket }} </td>
-            <td> <form action="{{ route('cinemas.destroy', $cinema->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('cinemas.show', $cinema->id) }}"> Lihat </a>
-                    <a class="btn btn-primary" href="{{ route('cinemas.edit', $cinema->id) }}"> Ubah </a>
+            <td> {{ $loop->iteration }} </td>
+            <td> {{ $data->nama_bioskop }} </td>
+            <td> {{ $data->alamat }} </td>
+            <td> {{ $data->tlp }} </td>
+            <td> {{ $data->films_id }} </td>
+            <td> {{ $data->jadwal_tayang }} </td>
+            <td> {{ $data->status_film }} </td>
+            <td> {{ $data->studios_id }} </td>
+            <td> {{ $data->harga_tiket }} </td>
+            <td> <form action="{{ route('cinemas.destroy', $data->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('cinemas.show', $data->id) }}"> Lihat </a>
+                    <a class="btn btn-primary" href="{{ route('cinemas.edit', $data->id) }}"> Ubah </a>
                         @csrf 
                         @method('DELETE')
                     <button type="submit" class="btn btn-danger"> Hapus </button>
@@ -53,6 +53,4 @@
         </tr>
         @endforeach
     </table>
-
-    {!! $cinema->links() !!}
 @endsection
