@@ -18,6 +18,11 @@ class PaymentController extends Controller
         return view('payments.index', ['payments' => $payments]);
     }
 
+    public function combo() {
+        $payments = Payment::list('title', 'id');
+        return View::make('combo')->with('cmb', $payments);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
