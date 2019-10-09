@@ -24,13 +24,13 @@ class FilmController extends Controller
     }
     
 
-    // public function cari(Request $request)
-    // {
-    //     $cari = $request->cari;
+    public function cari(Request $request)
+    {
+        $cari = $request->cari;
 
-    //     $films = DB::table('film')->where('judul', 'like', "%" .$cari. "%")->paginate(10);
-    //     return view('index', ['film' => $films]);
-    // }
+        $films = DB::table('films')->where('judul', 'like', "%" .$cari. "%");
+        return view('films.index', ['film' => $films]);
+    }
 
     /**
      * Show the form for creating a new resource.

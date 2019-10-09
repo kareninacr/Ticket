@@ -18,11 +18,11 @@
         </div>
     @endif   
 
-    <!-- <p> Cari </p>
+    <p> Cari </p>
     <form action="/film/cari" method="GET">
         <input type="text" name="cari" placeholder="Cari Film" value="{{ old('cari') }}">
         <input type="submit" value="CARI">
-    </form>  -->
+    </form> 
 
     <table class="table table-bordered">
         <tr>
