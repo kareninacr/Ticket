@@ -16,7 +16,7 @@
         <div class="alert alert-danger">
             <strong> Ups!</strong> Kayaknya ada yang salah deh ! <br><br>
             <ul>
-                @foreach (errors->all() as $error)
+                @foreach ($errors->all() as $error)
                     <li> {{ $error }} </li>
                 @endforeach
             <ul>
@@ -50,8 +50,8 @@
 
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
-                    <strong> Film Id </strong>
-                    <input type="text" name="films_id" class="form-control" placeholder="Film Id">
+                <strong> Films Id </strong>
+                <input type="text" name="films_id" class="form-control" placeholder="Films Id">
                 </div>
             </div>
 
@@ -65,7 +65,11 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Status Film </strong>
-                    <input type="file" name="status_film" class="form-control" placeholder="Status Film">
+                    <select name="status_film" class="form-control">  
+                        <option value=""> Pilih Status Film </option>
+                        <option value="Sedang Tayang"> Sedang Tayang </option>
+                        <option value="Akan Tayang"> Akan Tayang </option>
+                    </select>
                 </div>
             </div>
 
@@ -79,7 +83,7 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Harga Tiket </strong>
-                    <input type="text" name="harga_tiket" class="form-control" placeholder="Harga Tiket">
+                    <input type="text" name="harga_tiket" class="form-control" placeholder="Rp.">
                 </div>
             </div>
 
