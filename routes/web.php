@@ -27,6 +27,10 @@ Route::get('seats', function () {
     return view('studios.show');
 });
 
+Route::get('test', function () {
+    return view ('layouts.app');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
