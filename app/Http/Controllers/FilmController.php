@@ -23,7 +23,7 @@ class FilmController extends Controller
     {
         $cari = $request->cari;
 
-        $film = DB::table('film')->where('judul', 'like', "%" . $cari . "%")->paginate(10);
+        $film = DB::table('film')->where('judul', 'like', "%" .$cari. "%")->paginate(10);
         return view('index', ['film' => $film]);
     }
 
