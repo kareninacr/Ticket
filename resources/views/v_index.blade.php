@@ -28,11 +28,11 @@
   <nav class="navbar navbar-expand-lg fixed-top py-0">
     <div class="container-fluid">
 
-      <a href="index.html"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
+      <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
         <div class=" collapse navbar-collapse" >
-            <a class="nav-item nav-link py-0 active" href="index.html">Home</a>
+            <a class="nav-item nav-link py-0 active" href="{{url('/')}}">Home</a>
             <a class="nav-item nav-link py-0" href="#">Premiering</a>
-            <a class="nav-item nav-link py-0" href="#">Coming Soon</a>
+            <a class="nav-item nav-link py-0" href="{{url('/cs')}}">Coming Soon</a>
         </div>
         <div class="kanan collapse navbar-collapse my-0">
           <form class="form-inline my-2 my-lg-0 ml-auto">
@@ -269,6 +269,7 @@
         <div class="selengkapnya container">
           <a href=""><pre>Selengkapnya   ></pre></a>
         </div>
+
         <!-- card -->
 
         <div class="kartu ">
@@ -277,7 +278,7 @@
             <div class="col-sm">
               
         <div class="card cards d-inline-block">
-          <a href="detail_film.html">
+          <a href="{{url('/dtFilm')}}">
         <img src="{{ asset('images/joker.png') }}" alt="Joker" class="card-img-top">
         <div class="card-body">
             <div class="row">
@@ -379,7 +380,7 @@
           <hr>
         </div>
         <div class="selengkapnya container">
-          <a href=""><pre>Selengkapnya   ></pre></a>
+          <a href="{{url('/cs')}}"><pre>Selengkapnya   ></pre></a>
         </div>
         <!-- card -->
         <div class="kartu">
