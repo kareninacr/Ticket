@@ -29,10 +29,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('films', 'FilmController');
+Route::get('/films/cari', 'FilmController@cari');
 
 Route::get('/payment', 'PaymentController@index');
 
-Route::get('/films/cari', 'FilmController@cari');
+
 
 Route::resource('studios', 'StudioController');
 

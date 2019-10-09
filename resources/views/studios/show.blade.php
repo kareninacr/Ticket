@@ -56,3 +56,5 @@
         </div>
     </div>
 @endsection
+
+<!-- Kursi Tersedia : {{$studios->total() }} -->
