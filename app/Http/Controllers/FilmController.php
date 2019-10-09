@@ -12,19 +12,25 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function index()
+    // {
+    //     $films = Film::all();
+    //     return view('films.index', ['films' => $films]);
+    // }
     public function index()
     {
         $films = Film::all();
-        return view('films.index', ['films' => $films]);
+        return view('films.sedang_tayang', ['films' => $films]);
     }
+    
 
-    // public function cari(Request $request)
-    // {
-    //     $cari = $request->cari;
+    public function cari(Request $request)
+    {
+        $cari = $request->cari;
 
-    //     $films = DB::table('film')->where('judul', 'like', "%" .$cari. "%")->paginate(10);
-    //     return view('index', ['film' => $films]);
-    // }
+        $films = DB::table('films')->where('judul', 'like', "%" .$cari. "%");
+        return view('films.index', ['film' => $films]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -119,5 +125,10 @@ class FilmController extends Controller
     {
         $film->delete();
         return redirect('/films');
+    }
+    public function indexs()
+    {
+        $films = Film::all();
+        return view('films.v_comingsoon', ['films' => $films]);
     }
 }

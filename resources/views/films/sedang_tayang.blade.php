@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="icon" type="image/png" href="{{ asset('images/Tick@(logo).png') }}" style="width:100%;">
-    <title>Coming soon</title>
+    <title>Sedang Tayang</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -211,9 +211,10 @@
     </div>
 
     <!-- akhir pop up Register -->
-    <div class="jumbotron" style="margin-top: 80px; margin-bottom: -80px;">
+      
+      <div class="jumbotron" style="margin-top: 80px; margin-bottom: -80px;">
         <div class="text-center">
-          <h1>Coming Soon</h1>
+          <h1>Sedang Tayang</h1>
           <hr>
         </div>
       </div>
@@ -222,14 +223,15 @@
     <<div class="kartu">
         <div class="container">
           <div class="row">
-            <div class="col-sm">
+            @foreach ($films as $film)
+            <div class="col-sm" style="margin-bottom: 50px;">
               <a href="">
         <div class="card cards">
-        <img src="{{ asset('images/AV.jpg') }}" alt="Joker" class="card-img-top">
+        <img src="{{ asset('images/'.$film->cover) }}" alt="Joker" class="card-img-top">
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <h4 class="title">Avenger</h4>
+                    <h4 class="title">{{ $film->judul }}</h4>
                 </div>
 
             </div>
@@ -238,34 +240,8 @@
             </div>
             </a>
             </div>
-            <div class="col-sm">
-        <div class="card cards">
-        <img src="{{ asset('images/tk.jpg') }}" alt="Joker" class="card-img-top">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h4 class="title">Thinker Bell</h4>
-                </div>
-
-            </div>
-
-            </div>
-            </div>
-            </div>
-            <div class="col-sm">
-        <div class="card cards">
-        <img src="{{ asset('images/barbies.jpg') }}" alt="Joker" class="card-img-top">
-        <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <h4 class="title">Barbie</h4>
-                </div>
-
-            </div>
-
-            </div>
-            </div>
-            </div>
+            @endforeach
+            
             </div>
             </div>
             </div>

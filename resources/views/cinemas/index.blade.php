@@ -42,15 +42,18 @@
             <td> {{ $data->status_film }} </td>
             <td> {{ $data->studios_id }} </td>
             <td> {{ $data->harga_tiket }} </td>
-            <td> <form action="{{ route('cinemas.destroy', $data->id) }}" method="POST">
+            <td> 
                     <a class="btn btn-info" href="{{ route('cinemas.show', $data->id) }}"> Lihat </a>
-                    <a class="btn btn-primary" href="{{ route('cinemas.edit', $data->id) }}"> Ubah </a>
+                    <form action="{{ route('cinemas.destroy', $data->id) }}" method="POST">
                         @csrf 
                         @method('DELETE')
+                    <a class="btn btn-primary" href="{{ route('cinemas.edit', $data->id) }}"> Ubah </a>
                     <button type="submit" class="btn btn-danger"> Hapus </button>
                  </form>
             </td>
         </tr>
         @endforeach
     </table>
+
+    {{-- {!! $cinemas->links() !!} --}}
 @endsection
