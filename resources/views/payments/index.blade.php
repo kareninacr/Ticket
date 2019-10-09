@@ -17,29 +17,36 @@
             <p> {{ $message }} </p>
         </div>
     @endif    
-
-    <table class="table table-bordered">
+  <div class="table-responsive text-nowrap">
+    <table class="table table-striped">
         <tr>
             <th> No </th>
             <th> Total Bayar </th>
             <th> Metode Pembayaran </th>
             <th width="280px"> Aksi </th>
         </tr>
+        <tbody>
         @foreach ($payments as $payment)
         <tr>
             <td> {{ $loop->iteration }} </td>
             <td> {{ $payment->total_bayar }} </td>
             <td> {{ $payment->metode }} </td>
             <td> 
-                <a class="btn btn-info" href="{{ route('payments.show', $payment->id) }}"> Lihat </a>
-                <a class="btn btn-primary" href="{{ route('payments.edit', $payment->id) }}"> Ubah </a>
+                {{-- <a class="btn btn-info" href="{{ route('payments.show', $payment->id) }}"> Lihat </a> --}}
+                {{-- Edit button dipindahkan ke dalam form agar sejajar, karena ada @method('DELETE') --}}
+                {{-- delete tidak akan jalan jika tidak di post menggunakan form --}}
+                <form action="{{ route('payments.destroy', $payment->id) }}" method="POST">      
                         @csrf 
-                        @method('DELETE')
-                <a class="btn btn-danger" href="{{ route('payments.destroy', $payment->id) }}"> Hapus </a>
+                        @method('DELETE')   
+                        <a class="btn btn-primary" href="{{ route('payments.edit', $payment->id) }}"> Ubah </a>
+                     <input class="btn btn-danger" type="submit" value="Hapus"> 
+                 </form>  
             </td>
         </tr>
         @endforeach
+        </tbody>
     </table>
+  </div>
 
     {{-- {!! $payments->links() !!} --}}
 @endsection

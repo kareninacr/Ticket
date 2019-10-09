@@ -28,28 +28,25 @@
   <nav class="navbar navbar-expand-lg fixed-top py-0">
     <div class="container-fluid">
 
-      <a href="index.html"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
+      <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
         <div class=" collapse navbar-collapse" >
-            <a class="nav-item nav-link py-0 active" href="index.html">Home</a>
+            <a class="nav-item nav-link py-0 active" href="{{url('/')}}">Home</a>
             <a class="nav-item nav-link py-0" href="#">Premiering</a>
-            <a class="nav-item nav-link py-0" href="#">Coming Soon</a>
+            <a class="nav-item nav-link py-0" href="{{url('/cs')}}">Coming Soon</a>
         </div>
         <div class="kanan collapse navbar-collapse my-0">
           <form class="form-inline my-2 my-lg-0 ml-auto">
             <input class="form-control mr-sm-2 search" type="search" placeholder="Search Movie" aria-label="Search">
           </form>
+          @auth
           <div class="nav-item dropdown ">
           <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
-
+          
           <!-- kalau belum login tampilkan ini -->
-           <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
-            <a class="dropdown-item" href="#" data-target="#login" data-toggle="modal">Login</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-target="#Register" data-toggle="modal">Register</a>
-          <div class="dropdown-divider"></div>
+           
           <!-- akhir kalau belum login tampilkan ini -->
 
-          <!-- tampilkan jika sudah loged in -->
+          <!-- tampilkan jika sudah logged in -->
           <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/tickets.png') }}" alt="">My Ticket</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/logout.png') }}" alt="">Logout</a>
@@ -57,6 +54,21 @@
 
         </div>
         </div>
+        @endauth
+        @guest
+          <div class="nav-item dropdown ">
+          <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
+          
+          <!-- kalau belum login tampilkan ini -->
+           <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
+            <a class="dropdown-item" href="#" data-target="#login" data-toggle="modal">Login</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-target="#Register" data-toggle="modal">Register</a>
+          <div class="dropdown-divider"></div>
+          <!-- akhir kalau belum login tampilkan ini -->
+        </div>
+        </div>
+        @endguest
         </div>
     </nav>
     <!-- akhir navbar -->
@@ -269,6 +281,7 @@
         <div class="selengkapnya container">
           <a href=""><pre>Selengkapnya   ></pre></a>
         </div>
+
         <!-- card -->
 
         <div class="kartu ">
@@ -277,7 +290,7 @@
             <div class="col-sm">
               
         <div class="card cards d-inline-block">
-          <a href="detail_film.html">
+          <a href="{{url('/dtFilm')}}">
         <img src="{{ asset('images/joker.png') }}" alt="Joker" class="card-img-top">
         <div class="card-body">
             <div class="row">
@@ -379,7 +392,7 @@
           <hr>
         </div>
         <div class="selengkapnya container">
-          <a href=""><pre>Selengkapnya   ></pre></a>
+          <a href="{{url('/cs')}}"><pre>Selengkapnya   ></pre></a>
         </div>
         <!-- card -->
         <div class="kartu">
