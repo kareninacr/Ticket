@@ -30,7 +30,7 @@
                     <a class="nav-item nav-link py-0 active" href="{{url('/')}}">BERANDA</a>
                 <a class="nav-item nav-link py-0" href="{{ url('films')}}">SEDANG TAYANG</a>
                     <a class="nav-item nav-link py-0" href="{{url('/cs')}}">SEGERA</a>
-                </div>
+                </div> 
                 <div class="kanan collapse navbar-collapse my-0">
                     <form class="form-inline my-2 my-lg-0 ml-auto">
                         <input class="form-control mr-sm-2 search" type="search" placeholder="Search Movie" aria-label="Search">
