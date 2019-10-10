@@ -23,9 +23,10 @@
     </style>
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-lg fixed-top py-0">
         <div class="container-fluid">
-            <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
+            <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid"></img></a>
                 <div class=" collapse navbar-collapse" >
                     <a class="nav-item nav-link py-0 active" href="{{url('/')}}">BERANDA</a>
                 <a class="nav-item nav-link py-0" href="{{ url('films')}}">SEDANG TAYANG</a>
@@ -58,9 +59,9 @@
                     <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
                     <!-- kalau belum login tampilkan ini -->
                         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
-                            <a class="dropdown-item" href="{{ route('login')}}" data-target="#login" data-toggle="modal">Login</a>
+                            <a class="dropdown-item" href="" data-target="#login" data-toggle="modal">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('register') }}" data-target="#Register" data-toggle="modal">Register</a>
+                            <a class="dropdown-item" href="" data-target="#Register" data-toggle="modal">Register</a>
                             <div class="dropdown-divider"></div>
                     <!-- akhir kalau belum login tampilkan ini -->
                         </div>
@@ -136,7 +137,7 @@
                                         <h1 class="judul">Pesan Tiketmu, Menonton Kemudian</h1>
                                         <img src="{{ asset('images/bgps.png') }}" style ="width : 130%;margin-top: 10px; margin-right: 1000px;"alt="">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6">  
                                         <div class="text-center">
                                             <h3 class="pink-text mb-5"><strong>Register</strong></h3>
                                         </div>
