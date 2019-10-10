@@ -31,7 +31,7 @@
         </tr>
         @foreach ($studios as $studio)
         <tr>
-            <td> {{ ++$1 }} </td>
+            <td> {{ $loop->iteration }} </td>
             <td> {{ $studio->nama_studio }} </td>
             <td> {{ $studio->tipe_studio }} </td>
             <td> {{ $studio->jumlah_studio }} </td>
@@ -50,5 +50,5 @@
         @endforeach
     </table>
 
-    {!! $studio->links() !!}
+    <!-- {!! $studio->links() !!} -->
 @endsection

@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -14,10 +14,9 @@ class StudioController extends Controller
      */
     public function index()
     {
-        $studios = Studio::latest()->paginate(10);
+        $studios = Studio::all();
 
-        return view('studios.index', compact('studios'))
-            ->with('i', (request()->input('page', 1) -1) * 10);
+        return view('studios.index', ['studios' => $studios]);
     }
 
     /**

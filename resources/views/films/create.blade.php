@@ -44,14 +44,14 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Durasi  </strong>
-                    <input type="text" name="durasi" class="form-control" placeholder="Durasi Film">
+                    <input type="text" name="durasi" class="form-control" placeholder="HH:MM:SS">
                 </div>
             </div>
 
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Rating </strong>
-                    <input type="text" name="rating" class="form-control" placeholder="Rating Film">
+                    <input type="text" name="rating" class="form-control" placeholder="0.0">
                 </div>
             </div>
 
