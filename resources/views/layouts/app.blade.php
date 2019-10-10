@@ -35,18 +35,21 @@
                     <form class="form-inline my-2 my-lg-0 ml-auto">
                         <input class="form-control mr-sm-2 search" type="search" placeholder="Search Movie" aria-label="Search">
                     </form>
-                        <div class="nav-item dropdown ">
+                    @auth
+                    <div class="nav-item dropdown ">
+                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST">  --}}
                             <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
                             <!-- kalau belum login tampilkan ini -->
+                            <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
                             <!-- akhir kalau belum login tampilkan ini -->
                             <!-- tampilkan jika sudah logged in -->
-                         @auth
                             <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/tickets.png') }}" alt="">My Ticket</a>
                                 <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"><img class="img" src="{{ asset('images/logout.png') }}" alt="">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"> 
-                            </form>
+                            <div class="dropdown-divider"></div>
+                        {{-- </form> --}}
                 <!-- akhir yang perlu ditampilkan -->
+                    </div>
                         </div>
                 </div>
             @endauth
