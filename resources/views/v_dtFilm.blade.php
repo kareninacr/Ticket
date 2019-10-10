@@ -11,7 +11,7 @@
             <div class="list-group " style="overflow-y: scroll; height: 10rem;">
                 <h6 class="list-group-item border-0">2D
                     <div class="list-group list-group-horizontal mt-2 ">
-                        <a href="{{url('/seats')}}" class="list-group item btn btn-outline-primary ">14:00</a>
+                        <a href="{{url('studios')}}" class="list-group item btn btn-outline-primary ">14:00</a>
                         <a href="#" class="list-group item btn btn-outline-danger mx-2">16:00</a>
                         <a href="#" class="list-group item btn mx-2">21:00</a>
                     </div>

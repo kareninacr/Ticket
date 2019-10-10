@@ -27,9 +27,11 @@
     </style>
     <nav class="navbar navbar-expand-lg fixed-top py-0">
         <div class="container-fluid">
-            <img src="Tick@.png" class="navbar-brand img-fluid" href="#"></img>
+            <a href="{{url('/')}}">
+                <img src="{{asset ('images/Tick@.png')}}" class="navbar-brand img-fluid" href="{{url('/')}}"></img>
+            </a>
             <span class="navbar-text mx-auto w-25 averia">Mau Duduk Dimana ?</span>
-            <img src="user.jpeg" class="nav-item profile nav-link dropdown-toggle" alt="">
+            <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" alt="">
         </div>
     </nav>
     <div class="container" style="margin-top: 5em">
@@ -195,11 +197,10 @@
             <div class="col">
             </div>
         </div>
+    <a href="{{url('/bayar')}}">
         <button class="float-right btn btn-primary rounded-pill" style="width: 7em">Bayar</button>
+    </a>
     </div>
-{{-- @endsection --}}
-
-<!-- Kursi Tersedia : {{$studios->total() }} -->
   </head>
   <body>
 
