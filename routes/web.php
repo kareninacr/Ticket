@@ -27,6 +27,10 @@ Route::get('seats', function () {
     return view('studios.show');
 });
 
+Route::get('test', function () {
+    return view ('layouts.app');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,6 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('films', 'FilmController');
 Route::get('/films/cari', 'FilmController@cari');
 
+Route::get('filmss', 'FilmController@indexs');
 Route::get('/payment', 'PaymentController@index');
 
 
