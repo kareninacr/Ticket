@@ -27,7 +27,7 @@ Route::get('bayar', function () {
     return view('payments.v_pembayaran');
 });
 Route::get('test', function () {
-    return view ('layouts.app');
+    return view('layouts.app');
 });
 Route::get('metodePembayaran', function () {
     return view ('payments.metodePembayaran');
@@ -43,7 +43,7 @@ Route::get('/films/cari', 'FilmController@cari');
 Route::get('filmss', 'FilmController@indexs');
 Route::get('/payment', 'PaymentController@index');
 
-
+Route::post('/register', 'Auth\RegisterController@create');
 
 Route::resource('studios', 'StudioController');
 

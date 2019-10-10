@@ -44,6 +44,8 @@
                             <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
                             <!-- akhir kalau belum login tampilkan ini -->
                             <!-- tampilkan jika sudah logged in -->
+                            <a class="dropdown-item" href=" "><img class="img" src="{{ asset('images/user.png') }}" alt="">Nama User</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/tickets.png') }}" alt="">My Ticket</a>
                                 <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"><img class="img" src="{{ asset('images/logout.png') }}" alt="">Logout</a>
@@ -141,7 +143,7 @@
                                         <div class="text-center">
                                             <h3 class="pink-text mb-5"><strong>Register</strong></h3>
                                         </div>
-                                        <form method="POST" action="{{ route('register') }}">
+                                        <form method="POST" action="{{ url('/register') }}">
                                         @csrf
                                                 <div class="md-form pb-3">
                                                     <label for="Form-pass2">Your Name</label>
