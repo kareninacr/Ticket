@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg fixed-top py-0">
             <div class="container-fluid">
                 <a href="{{url('/')}}"><img src="{{ asset('images/Tick@.png') }}" class="navbar-brand img-fluid" href="home.html"></img></a>
-                <span class="navbar-text mx-auto w-25 averia">Pembayaran</span>   
+                <span class="navbar-text mx-auto w-25 averia">Pembayaran</span>
             </div>
         </nav>
         <div class="container">
@@ -95,7 +95,7 @@
                             <div class="col-md-4">
                                 <div class="d-flex justify-content-center">
                                 <div class="card" style="width: 12rem">
-                                    <img class="card-img-top" src="img/joker.png" alt="" style="height: 100%;width: 100%;">
+                                <img class="card-img-top" src="{{asset('images/joker.png')}}" alt="" style="height: 100%;width: 100%;">
                                     </div>
                                 </div>
                             </div>
@@ -103,8 +103,8 @@
                     </div>
 
                 <div class="modal-footer">
-                  <a href="index.html">
-                    <button class="buttonB "  >Kembali</button>
+                  <a href="{{url('/')}}">
+                    <button class="buttonB " >Kembali</button>
                   </a>
                 </div>
             </div>

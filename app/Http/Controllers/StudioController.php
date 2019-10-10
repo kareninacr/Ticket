@@ -16,7 +16,7 @@ class StudioController extends Controller
     {
         $studios = Studio::all();
 
-        return view('studios.index', ['studios' => $studios]);
+        return view('studios.show', ['studios' => $studios]);
     }
 
     /**

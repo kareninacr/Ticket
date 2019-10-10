@@ -24,10 +24,13 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
     return abort(404);
 });
 Route::get('bayar', function () {
-    return view('v_pembayaran');
+    return view('payments.v_pembayaran');
 });
 Route::get('test', function () {
     return view ('layouts.app');
+});
+Route::get('metodePembayaran', function () {
+    return view ('payments.metodePembayaran');
 });
 
 Auth::routes();
