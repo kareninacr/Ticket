@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Tick@') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('images/Tick@(logo).png') }}" style="width:100%;">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -35,15 +35,17 @@
                     <form class="form-inline my-2 my-lg-0 ml-auto">
                         <input class="form-control mr-sm-2 search" type="search" placeholder="Search Movie" aria-label="Search">
                     </form>
-                         @auth
                         <div class="nav-item dropdown ">
                             <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
                             <!-- kalau belum login tampilkan ini -->
                             <!-- akhir kalau belum login tampilkan ini -->
                             <!-- tampilkan jika sudah logged in -->
+                         @auth
                             <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/tickets.png') }}" alt="">My Ticket</a>
                                 <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><img class="img" src="{{ asset('images/logout.png') }}" alt="">Logout</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"><img class="img" src="{{ asset('images/logout.png') }}" alt="">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"> 
+                            </form>
                 <!-- akhir yang perlu ditampilkan -->
                         </div>
                 </div>
@@ -53,9 +55,9 @@
                     <img src="{{ asset('images/user.png') }}" class="nav-item profile nav-link dropdown-toggle" id="dropdownMenuOffset" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20" alt="">
                     <!-- kalau belum login tampilkan ini -->
                         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenuOffset">
-                            <a class="dropdown-item" href="#" data-target="#login" data-toggle="modal">Login</a>
+                            <a class="dropdown-item" href="{{ route('login')}}" data-target="#login" data-toggle="modal">Login</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-target="#Register" data-toggle="modal">Register</a>
+                            <a class="dropdown-item" href="{{ route('register') }}" data-target="#Register" data-toggle="modal">Register</a>
                             <div class="dropdown-divider"></div>
                     <!-- akhir kalau belum login tampilkan ini -->
                         </div>
@@ -82,14 +84,15 @@
                                         <div class="text-center">
                                             <h3 class="pink-text mb-5"><strong>login</strong></h3>
                                         </div>
-                                        <form action="">
+                                        <form method="POST" action="{{ route('login') }}">
+                                        @csrf
                                             <div class="md-form">
                                               <label for="Form-email2">Your email</label>
-                                              <input type="text" id="Form-email1" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
+                                              <input type="text" id="Form-email1" class="form-control" name="email" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
                                             </div>
                                             <div class="md-form pb-3">
                                               <label for="Form-pass">Your password</label>
-                                              <input type="password" id="Form-pass" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
+                                              <input type="password" id="Form-pass" class="form-control" name="password" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
                                             </div>
                                             <!--Grid row-->
                                             <div class="row d-flex align-items-center mb-4">
@@ -102,7 +105,7 @@
                                         <!--Grid column-->
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <p class="font-small grey-text d-flex justify-content-end">Belum punya akun? <a href="#" class="blue-text ml-1" id="regist" > Register yuk!!!</a></p>
+                                                <p class="font-small grey-text d-flex justify-content-end">Belum punya akun? <a href="{{ route('register') }}" class="blue-text ml-1" id="regist" > Register yuk!!!</a></p>
                                             </div>
                                         </div>
                                     <!--Grid column-->
@@ -134,18 +137,19 @@
                                         <div class="text-center">
                                             <h3 class="pink-text mb-5"><strong>Register</strong></h3>
                                         </div>
-                                            <form action="">
+                                        <form method="POST" action="{{ route('register') }}">
+                                        @csrf
+                                                <div class="md-form pb-3">
+                                                    <label for="Form-pass2">Your Name</label>
+                                                    <input class="form-control" type="text" name="name" autocomplete="off" required>
+                                                </div>
                                                 <div class="md-form">
                                                     <label for="Form-email2">Your email</label>
-                                                    <input type="text" id="Form-email2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
+                                                    <input type="text" id="Form-email2" class="form-control" name="email" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Email anda')" oninput="setCustomValidity('')">
                                                 </div>
                                                 <div class="md-form pb-3">
                                                     <label for="Form-pass2">Your password</label>
-                                                    <input type="password" id="Form-pass2" class="form-control" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
-                                                </div>
-                                                <div class="md-form pb-3">
-                                                    <label for="Form-pass2">No Telephone</label>
-                                                    <input class="form-control" type="tel" name="phone" autocomplete="off" placeholder="123412341234"pattern="[0-9]{4}[0-9]{4}[0-9]{4}" required>
+                                                    <input type="password" id="Form-pass2" class="form-control" name="password" autocomplete="off" required oninvalid="this.setCustomValidity('Harap masukan Password anda')" oninput="setCustomValidity('')">
                                                 </div>
                                                 <!--Grid row-->
                                                 <div class="row d-flex align-items-center mb-4">

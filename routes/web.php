@@ -20,6 +20,9 @@ Route::get('dtFilm', function () {
 Route::get('cs', function () {
     return view('v_comingsoon');
 });
+Route::get('logout', 'Auth\LoginController@logout', function () {
+    return abort(404);
+});
 Route::get('bayar', function () {
     return view('v_pembayaran');
 });
