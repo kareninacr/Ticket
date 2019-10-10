@@ -26,10 +26,6 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
 Route::get('bayar', function () {
     return view('v_pembayaran');
 });
-Route::get('seats', function () {
-    return view('studios.show');
-});
-
 Route::get('test', function () {
     return view ('layouts.app');
 });

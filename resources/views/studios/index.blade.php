@@ -16,7 +16,7 @@
         <div class="alert alert-success">
             <p> {{ $message }} </p>
         </div>
-    @endif    
+    @endif
 
     <table class="table table-bordered">
         <tr>
@@ -39,9 +39,8 @@
             <td> {{ $studio->kode_kursi }} </td>
             <td> {{ $studio->keterangan }} </td>
             <td> <form action="{{ route('studios.destroy', $studio->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('studios.show', $studio->id) }}"> Lihat </a>
                     <a class="btn btn-primary" href="{{ route('studios.edit', $studio->id) }}"> Ubah </a>
-                        @csrf 
+                        @csrf
                         @method('DELETE')
                     <button type="submit" class="btn btn-danger"> Hapus </button>
                  </form>
@@ -50,5 +49,5 @@
         @endforeach
     </table>
 
-    <!-- {!! $studio->links() !!} -->
+    {{-- {!! $studio->links() !!} --}}
 @endsection

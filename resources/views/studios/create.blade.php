@@ -12,11 +12,11 @@
         </div>
     </div>
 
-    @if ($errors->any())
+    @if ($errors -> any())
         <div class="alert alert-danger">
             <strong> Ups!</strong> Kayaknya ada yang salah deh ! <br><br>
             <ul>
-                @foreach (errors->all() as $error)
+                @foreach ($errors -> all() as $error)
                     <li> {{ $error }} </li>
                 @endforeach
             <ul>
@@ -24,8 +24,8 @@
     @endif
 
     <form action="{{ route('studios.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf 
-    
+        @csrf
+
         <div class="row">
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
@@ -37,7 +37,7 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Tipe Studio </strong>
-                    <select name="tipe_studio" class="form-control"> Tipe Studio 
+                    <select name="tipe_studio" class="form-control"> Tipe Studio
                         <option value="Reguler"> Reguler </option>
                         <option value="2D"> 2D </option>
                         <option value="3D"> 3D </option>

@@ -16,7 +16,7 @@
         <div class="alert alert-danger">
             <strong> Ups!</strong> Kayaknya ada yang salah deh ! <br><br>
             <ul>
-                @foreach (errors->all() as $error)
+                @foreach ($errors->all() as $error)
                     <li> {{ $error }} </li>
                 @endforeach
             <ul>
@@ -24,9 +24,9 @@
     @endif
 
     <form action="{{ route('studios.edit', $studio->id) }}" method="POST">
-        @csrf 
+        @csrf
         @method('PUT')
-    
+
         <div class="row">
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
@@ -38,7 +38,7 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Tipe Studio </strong>
-                    <select name="tipe_studio" class="form-control"> Tipe Studio 
+                    <select name="tipe_studio" class="form-control"> Tipe Studio
                         <option value="Reguler" value="{{ $studio->tipe_studio }}"> Reguler </option>
                         <option value="2D" value="{{ $studio->tipe_studio }}"> 2D </option>
                         <option value="3D" value="{{ $studio->tipe_studio }}"> 3D </option>
@@ -80,7 +80,7 @@
             <div class="col-xs-12 col=sm-12 col-md-12">
                 <div class="form_group">
                     <strong> Keterangan </strong>
-                    <input type="textarea" name="keterangan" style=height:150px" class="form-control" placeholder="Keterangan Studio"> value="{{ $studio->keterangan }}" </textarea>
+                    <input type="textarea" name="keterangan" style=height:150px" class="form-control" placeholder="Keterangan Studio" value="{{ $studio->keterangan }}">  </textarea>
                 </div>
             </div>
 
